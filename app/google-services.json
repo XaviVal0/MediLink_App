@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "92008879800",
+    "firebase_url": "https://medilink-c2ddd-default-rtdb.firebaseio.com",
+    "project_id": "medilink-c2ddd",
+    "storage_bucket": "medilink-c2ddd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92008879800:android:6d2ab7d0901d0febcfc64d",
+        "android_client_info": {
+          "package_name": "com.example.medilink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92008879800-63aab17v0rnk0vsapl3e3i0ifpma9435.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medilink",
+            "certificate_hash": "bd484bffa407c0691139d61e4e0e36d261007b8c"
+          }
+        },
+        {
+          "client_id": "92008879800-ogbmhqoq1le084gtdn66pdha5c1qs2db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC53UEL_suVv0ge-CZb2Z_0UjCaQEmbPig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92008879800-ogbmhqoq1le084gtdn66pdha5c1qs2db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

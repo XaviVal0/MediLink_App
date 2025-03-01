@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">MediLink</string>
+    <string name="default_web_client_id">92008879800-ogbmhqoq1le084gtdn66pdha5c1qs2db.apps.googleusercontent.com</string>
+
+    <string name="Item_Inicio">Inicio</string>
+    <string name="Item_Chats">Chats</string>
+    <string name="Item_Publicar">Publicar</string>
+    <string name="Item_Mis_Productos">Mis Productos</string>
+    <string name="Item_Cuenta">Cuenta</string>
+
+    <string name="TituloRL">Titulo</string>
+
+    <string name="Txt_login">Iniciar Sesion</string>
+    <string name="Et_email">Email</string>
+    <string name="Et_password">Contraseña</string>
+    <string name="Btn_ingresar">Ingresar</string>
+    <string name="Btn_ingresar_google">Ingresa con Google</string>
+    <string name="Txt_no_cuenta">¿No tienes una cuenta?</string>
+    <string name="Txt_registrarme">REGISTRATE</string>
+
+
+    <string name="Txt_registro">Registrate</string>
+    <string name="Et_r_password">Repetir contraseña</string>
+    <string name="Et_telefono">Numero de Telefono</string>
+    <string name="Et_primerapellido">Primer apellido</string>
+    <string name="Et_segundoapellido">Segundo apellido</string>
+    <string name="Et_nombre">Nombre completo</string>
+    <string name="Et_cp">Codigo postal</string>
+    <string name="Txt_terminos">Al registrarte,aceptas nuestros Terminos y condiciones y Politicas de privacidad</string>
+    <string name="Btn_registrar">Registrar</string>
+
+    <string name="Btn_cerrar_Sesion">Cerrar sesion</string>
+
+
+    <string name="Txt_perfil">Perfil de Usuario</string>
+    <string name="Txt_Informacion">Informacion:</string>
+
+    <string name="Txt_email">email</string>
+    <string name="Tv_email">email@dominio.com</string>
+
+    <string name="Txt_nombre">Nombre</string>
+    <string name="Tv_nombre">Nombre</string>
+
+    <string name="Txt_primerapellido">Primer apellido:</string>
+    <string name="Tv_primerapellido">Primer apellido</string>
+
+    <string name="Txt_segundoapellido">Segundo apellido:</string>
+    <string name="Tv_segundoapellido">Segundo apellido</string>
+
+    <string name="Txt_telefono">Telefono:</string>
+    <string name="Tv_telefono">9999999999</string>
+
+    <string name="Txt_cp">Codigo postal:</string>
+    <string name="Tv_cp">Codigo postal</string>
+
+    <string name="Txt_fecha_nac">Fecha de nacimiento:</string>
+    <string name="Tv_fecha_nac">dd/mm/aaaa</string>
+
+    <string name="Txt_fecha_registro">Fecha de registro:</string>
+    <string name="Tv_fecha_registro">dd/mm/aaaa</string>
+
+    <string name="Txt_edad">Edad</string>
+    <string name="Tv_edad">00</string>
+
+    <string name="Txt_localidad">Localidad</string>
+    <string name="Tv_localidad">Oaxaca</string>"
+
+    <string name="Txt_Bienvenido">Bienvenido</string>
+
+    <string name="TxtOpciones">Opciones</string>
+    <string name="Btn_editar_perfil">Editar Perfil</string>
+
+
+    <string name="Txt_Editar_Perfil">Editar Perfil</string>
+    <string name="Et_localidad">Localidad</string>
+    <string name="Et_fecha_nac">Fecha de nacimiento</string>"
+    <string name="Et_Cp">Codigo Postal</string>
+    <string name="Btn_Actualizar">Actualizar</string>
+    <string name="Et_Nombre">Nombre completo</string>
+    <string name="Et_Telefono">Telefono</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
