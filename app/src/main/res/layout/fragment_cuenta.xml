@@ -53,8 +53,8 @@
         <!-- Imagen de perfil -->
         <ImageView
             android:id="@+id/Tv_perfil"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/imagen_perfil"
             android:layout_marginTop="15dp"
             android:scaleType="centerCrop"/>

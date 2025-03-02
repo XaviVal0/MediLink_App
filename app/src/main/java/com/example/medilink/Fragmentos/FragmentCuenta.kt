@@ -14,6 +14,7 @@ import android.content.Context
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.medilink.Constantes
+import com.example.medilink.EditarPerfil
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -23,6 +24,7 @@ class FragmentCuenta : Fragment() {
 
     private lateinit var binding: FragmentCuentaBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var  mContext: Context
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +40,10 @@ class FragmentCuenta : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         LeerInf()
+        binding.BtnEditarPerfil.setOnClickListener {
+            startActivity(Intent(requireContext(), EditarPerfil::class.java))
+        }
+
 
         binding.BtnCerrarSesion.setOnClickListener {
             firebaseAuth.signOut()
@@ -80,6 +86,7 @@ class FragmentCuenta : Fragment() {
                     try {
                         Glide.with(requireContext())
                             .load(imagen)
+
                             .placeholder(R.drawable.ic_cuenta)
                             .into(binding.TvPerfil)
                     } catch (e: Exception) {

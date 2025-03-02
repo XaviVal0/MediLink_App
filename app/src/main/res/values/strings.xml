@@ -72,11 +72,11 @@
 
 
     <string name="Txt_Editar_Perfil">Editar Perfil</string>
-    <string name="Et_localidad">Localidad</string>
+    <string name="Et_Direccion">Direccion (Colonia)</string>
     <string name="Et_fecha_nac">Fecha de nacimiento</string>"
     <string name="Et_Cp">Codigo Postal</string>
     <string name="Btn_Actualizar">Actualizar</string>
-    <string name="Et_Nombre">Nombre completo</string>
+    <string name="Et_Nombres">Nombre completo</string>
     <string name="Et_Telefono">Telefono</string>
 
 
