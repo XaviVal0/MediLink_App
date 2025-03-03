@@ -231,6 +231,64 @@
                 android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eres mayor de 18 años"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"/>
+
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_mayor_edad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/Blue_principal"
+            android:trackTint="@color/Gray"
+            android:textOn="Sí"
+            android:textOff="No"
+            android:textColor="@color/Black" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Txt_terminos" />
+
+            <TextView
+                android:id="@+id/Txt_terminos2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:textColor="@color/Blue_principal"
+                android:text="@string/Txt_terminos2"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+
         <!-- Botón Registrar -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Btnregistrar"

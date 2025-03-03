@@ -26,7 +26,8 @@
     <string name="Et_segundoapellido">Segundo apellido</string>
     <string name="Et_nombre">Nombre completo</string>
     <string name="Et_cp">Codigo postal</string>
-    <string name="Txt_terminos">Al registrarte,aceptas nuestros Terminos y condiciones y Politicas de privacidad</string>
+    <string name="Txt_terminos">Al registrarte,aceptas nuestros</string>
+    <string name="Txt_terminos2">terminos y condiciones</string>
     <string name="Btn_registrar">Registrar</string>
 
     <string name="Btn_cerrar_Sesion">Cerrar sesion</string>

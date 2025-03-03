@@ -42,6 +42,8 @@ class correologin : AppCompatActivity() {
             insets
         }
 
+
+
         firebaseAuth = FirebaseAuth.getInstance()
         comprobarSesion()
 
@@ -67,6 +69,8 @@ class correologin : AppCompatActivity() {
         binding.TxtRegistrarme.setOnClickListener {
             startActivity(Intent(this@correologin, registrocorreo::class.java))
         }
+
+
     }
 
     private fun googlelogin() {
@@ -199,4 +203,6 @@ class correologin : AppCompatActivity() {
             finishAffinity()
         }
     }
+
+
 }

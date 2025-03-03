@@ -4,15 +4,19 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.medilink.Constantes
 import com.example.medilink.MainActivity
 import com.example.medilink.R
 import com.example.medilink.databinding.ActivityRegistrocorreoBinding
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -39,12 +43,50 @@ class registrocorreo : AppCompatActivity() {
             validarInfo()
         }
 
+        val TxtTerminos2: TextView = findViewById(R.id.Txt_terminos2)
+
+        TxtTerminos2.setOnClickListener {
+            // Llamar a la función que muestra el AlertDialog con los términos
+            showTermsDialog()
+        }
+
+        val switchMayorEdad = findViewById<SwitchCompat>(R.id.switch_mayor_edad)
+        val btnRegistrar = findViewById<MaterialButton>(R.id.Btnregistrar)
+
+        // Inicializar el estado del botón como deshabilitado
+        btnRegistrar.isEnabled = false
+
+        // Listener para el SwitchCompat
+        switchMayorEdad.setOnCheckedChangeListener { _, isChecked ->
+            // Habilitar o deshabilitar el botón según el estado del switch
+            btnRegistrar.isEnabled = isChecked
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    private fun showTermsDialog() {
+        MaterialAlertDialogBuilder(this) // Usamos MaterialAlertDialogBuilder
+            .setTitle("Términos y Condiciones")
+            .setMessage("Bienvenido/a a Medilink, una plataforma dedicada a la donación de medicamentos en beneficio de comunidades necesitadas. Al acceder y utilizar nuestra aplicación, usted acepta cumplir con estos Términos y Condiciones de Uso." +
+                    "\n" +
+                    "La aplicación tiene como objetivo facilitar la donación y recepción de medicamentos, siempre bajo el cumplimiento de las normativas sanitarias vigentes. Se prohíbe estrictamente:\n" +
+                    "\n" +
+                    "La donación o recepción de antibóticos y sustancias controladas.\n" +
+                    "La distribución de medicamentos en mal estado, caducados o sin empaque original.\n" +
+                    "Cualquier intento de venta de medicamentos a través de la plataforma.\n"+
+                    "\n" +
+                    "La aplicación actúa como intermediaria y no garantiza la calidad, eficacia o seguridad de los medicamentos donados. El usuario acepta que la aplicación no se hace responsable de cualquier problema de salud que pudiera derivarse del uso de los medicamentos obtenidos mediante la plataforma.")
+
+
+            .setCancelable(true)
+
+            .show()
     }
 
     private var primerapellido = ""
