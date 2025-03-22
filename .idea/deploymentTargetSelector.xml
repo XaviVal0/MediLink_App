@@ -4,11 +4,11 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-03-03T02:27:23.414416Z">
+        <DropdownSelection timestamp="2025-03-22T06:03:19.051761300Z">
           <Target type="DEFAULT_BOOT">
-            <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\valen\.android\avd\Pixel_9_Pro_XL_API_UpsideDownCakePrivacySandbox.avd" />
-            </handle>
+            <template>
+              <DeviceId pluginId="FirebaseDirectAccess" type="TEMPLATE" identifier="model_id=dm3q/34" />
+            </template>
           </Target>
         </DropdownSelection>
         <DialogSelection />

@@ -81,6 +81,28 @@
     <string name="Et_Telefono">Telefono</string>
 
 
+    <string name="Et_nombre_medicamento">Nombre del medicamento</string>
+    <string name="Et_Descripcion">Descripcion</string>"
+    <string name="Et_Locacion">Direccion de entrega (Colonia)</string>
+    <string name="Categoria">Categoria</string>
+    <string name="Et_Marca">Marca</string>
+    <string name="Et_Cantidad">Cantidad</string>
+
+    <string name="Et_fecha_A_Caducar">Fecha de Caducidad</string>
+    <string name="Btn_Crear_Anuncio">Crear Donacion</string>
+
+    <string name="Api_Google">AIzaSyBLXqdB6dbfVKIoNmTvNJYBWG-cmMX5e_w</string>
+
+
+    <string name="Tv_categoria">Categoria</string>
+
+    <string name="Tv_Titulo">Nombre del Medicamento</string>
+    <string name="Tv_Descripcion">Descripcion del Producto</string>
+    <string name="Tv_Locacion">Direccion de Entrega</string>
+    <string name="Tv_Cantidad">Cantidad</string>
+
+    <string name="favorite_button">Agregar a favoritos</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

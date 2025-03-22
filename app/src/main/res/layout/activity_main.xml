@@ -11,20 +11,21 @@
     <RelativeLayout
         android:id="@+id/ToolbarRL"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/m_toolbar_height">
+        android:layout_height="@dimen/m_toolbar_height"
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/TituloRL"
-            android:text="@string/TituloRL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:text="@string/TituloRL" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ccc"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true"
+            android:background="#ccc" />
 
     </RelativeLayout>
 

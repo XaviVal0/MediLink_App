@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Estilo para imagen cuadrada con bordes redondeados -->
+    <style name="ImageStyle_Square_With_Rounded_Corners">
+        <item name="cornerSize">12dp</item> <!-- Ajusta el valor para el radio de los bordes -->
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+</resources>

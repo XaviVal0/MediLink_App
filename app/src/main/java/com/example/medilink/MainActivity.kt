@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.medilink.Anuncios.CrearAnuncio
 import com.example.medilink.Fragmentos.FragmentChats
 import com.example.medilink.Fragmentos.FragmentCuenta
 import com.example.medilink.Fragmentos.FragmentInicio
@@ -34,37 +35,43 @@ class MainActivity : AppCompatActivity() {
         comprobarSesion()
 
         verFragmentInicio()
-            binding.BottomNV.setOnItemSelectedListener { item->
-                when(item.itemId){
-                    R.id.Item_Incio->{
-                        verFragmentInicio()
-                        true
-                    }
-                    R.id.Item_Chats->{
-                        verFragmentChats()
-                        true
-                    }
-                    R.id.Item_Mis_Productos->{
-                        verFragmentMisProductos()
-                        true
-                    }
-                    R.id.Item_Cuenta-> {
-                        verFragmentCuenta()
-                        true
-                    }
-                    else->{
-                        false
-                    }
+        binding.BottomNV.setOnItemSelectedListener { item->
+            when(item.itemId){
+                R.id.Item_Incio->{
+                    verFragmentInicio()
+                    true
+                }
+                R.id.Item_Chats->{
+                    verFragmentChats()
+                    true
+                }
+                R.id.Item_Mis_Productos->{
+                    verFragmentMisProductos()
+                    true
+                }
+                R.id.Item_Cuenta-> {
+                    verFragmentCuenta()
+                    true
+                }
+
+
+                else->{
+                    false
                 }
             }
-
         }
 
+        binding.FAB.setOnClickListener {
+            startActivity(Intent(this,CrearAnuncio::class.java))
+        }
+
+    }
+
     private fun comprobarSesion(){
-       if (firebaseAuth.currentUser == null){
-           startActivity(Intent(this,correologin::class.java))
-           finishAffinity()
-       }
+        if (firebaseAuth.currentUser == null){
+            startActivity(Intent(this,correologin::class.java))
+            finishAffinity()
+        }
     }
 
     private fun verFragmentInicio(){
@@ -101,4 +108,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    }
+}

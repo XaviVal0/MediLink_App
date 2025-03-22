@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Anuncios.CrearAnuncio">
+
+    <RelativeLayout
+        android:id="@+id/RL_Imagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/agregarImg"
+            android:layout_marginTop="15dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_agregaar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RL_Imagen"
+        android:layout_marginTop="-2dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RV_Imagenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/item_imagenes_seleccionadas" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_NombreProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RV_Imagenes"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_nombre_medicamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:hint="@string/Et_nombre_medicamento" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Categoria"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_NombreProduct"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/Categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:hint="@string/Categoria" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Marca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_Categoria"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_Marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:hint="@string/Et_Marca" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_Marca"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_Descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:hint="@string/Et_Descripcion"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minHeight="100dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Fecha_Caduc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_Descripcion"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_fecha_A_Caducar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:hint="@string/Et_fecha_A_Caducar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Cantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_Fecha_Caduc"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_Cantidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:hint="@string/Et_Cantidad" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Locacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TIL_Cantidad"
+                android:layout_marginTop="10dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Et_Locacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:hint="@string/Et_Locacion" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Btn_Crear_Anuncio"
+        android:text="@string/Btn_Crear_Anuncio"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="true"
+        android:layout_margin="10dp"
+        app:cornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</RelativeLayout>
