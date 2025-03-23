@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,17 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Toolbar (OCULTO) -->
     <RelativeLayout
         android:id="@+id/ToolbarRL"
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_toolbar_height"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:visibility="gone"> <!-- Aquí se oculta -->
 
         <TextView
             android:id="@+id/TituloRL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:text="@string/TituloRL" />
 
         <View
@@ -26,23 +29,26 @@
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
             android:background="#ccc" />
-
     </RelativeLayout>
 
+    <!-- Contenedor para los fragmentos -->
     <FrameLayout
         android:id="@+id/FragmentL1"
-        android:layout_below="@+id/ToolbarRL"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/View1"/>
+        android:layout_height="0dp"
+        android:layout_below="@id/ToolbarRL"
+        android:layout_above="@id/View1"
+        android:layout_alignParentTop="true"/>
 
+    <!-- Línea separadora -->
     <View
         android:id="@+id/View1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#ccc"
-        android:layout_above="@+id/BottomNV"/>
+        android:layout_above="@id/BottomNV"/>
 
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNV"
         android:layout_width="match_parent"
@@ -51,6 +57,7 @@
         app:menu="@menu/mi_menu"
         app:labelVisibilityMode="labeled"/>
 
+    <!-- Botón flotante -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/FAB"
         android:layout_width="wrap_content"
@@ -59,5 +66,4 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="58dp"/>
-
 </RelativeLayout>

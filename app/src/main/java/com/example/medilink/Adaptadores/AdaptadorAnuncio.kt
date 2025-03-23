@@ -1,6 +1,7 @@
 package com.example.medilink.Adaptadores
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -9,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.medilink.Constantes
+import com.example.medilink.DetalleAnuncio.DetalleAnuncio
 import com.example.medilink.Filtro.FiltroAnuncio
 import com.example.medilink.Modelo.ModeloAnuncio
 import com.example.medilink.R
@@ -45,6 +47,12 @@ class AdaptadorAnuncio(
         cargarImagen(modeloAnuncio, holder)
 
         comprobarFavorito(modeloAnuncio, holder)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, DetalleAnuncio::class.java)
+            intent.putExtra("idAnuncio", modeloAnuncio.id)
+            context.startActivity(intent)
+        }
 
         holder.binding.IbButton.setOnClickListener {
             val favorito = modeloAnuncio.favorito
