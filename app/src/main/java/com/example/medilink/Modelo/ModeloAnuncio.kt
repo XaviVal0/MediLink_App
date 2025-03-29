@@ -11,7 +11,7 @@ class ModeloAnuncio {
     var estado: String = ""
     var descripcion: String = ""
     var tiempo: Long = 0
-    var fecha_caducidad: String = ""
+    var fecha_vencimiento: String = ""
     var cantidad: String = ""
     var latitud = 0
     var longitud = 0
@@ -27,7 +27,7 @@ class ModeloAnuncio {
         nombreproducto: String,
         descripcion: String,
         tiempo: Long,
-        fecha_caducidad: String,
+        fecha_vencimiento: String,
         cantidad: String,
         latitud: Int,
         longitud: Int,
@@ -42,7 +42,7 @@ class ModeloAnuncio {
         this.nombreproducto = nombreproducto
         this.descripcion = descripcion
         this.tiempo = tiempo
-        this.fecha_caducidad = fecha_caducidad
+        this.fecha_vencimiento = fecha_vencimiento
         this.cantidad = cantidad
         this.latitud = latitud
         this.longitud = longitud

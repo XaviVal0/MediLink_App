@@ -21,13 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="204dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/loginlogo" />
+            android:src="@drawable/incio_medelinlogo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/Txt_login"
+            android:fontFamily="@font/bold"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -50,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Et_email"
+                android:fontFamily="@font/bold"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -75,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Et_password"
+                android:fontFamily="@font/bold"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -86,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/bold"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/Blue_principal"
             android:text="@string/Btn_ingresar"
@@ -111,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:text="o"
                 android:textStyle="bold"
+                android:fontFamily="@font/bold"
                 android:textSize="30sp"
                 android:textColor="@android:color/darker_gray"/>
 
@@ -156,9 +161,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:textColor="@color/Blue_principal"
-                android:text="@string/Txt_registrarme"
+                android:text="Registrate"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/Tv_Recuperar"
+                android:text="¿Olvidaste tu contraseña?"
+                android:textStyle="bold"
+                android:textColor="@color/Blue_principal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
 

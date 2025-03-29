@@ -74,14 +74,14 @@ class FragmentCuenta : Fragment() {
 
                     val fort_tiempo = Constantes.obtenerFecha(tiempo.toLong())
 
-                    binding.TvLocalidad.text = localidad
+
                     binding.TvEmail.text = email
                     binding.TvNombre.text = nombre
                     binding.TvPrimerapellido.text = primerapellido
                     binding.TvSegundoapellido.text = segundoapellido
                     binding.TvCp.text = cp
                     binding.TvTelefono.text = telefono
-                    binding.TvFechaNac.text = fecha_nac
+                    binding.TvNombreCopia.text = nombre
 
                     try {
                         Glide.with(requireContext())

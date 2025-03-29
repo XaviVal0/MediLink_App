@@ -6,31 +6,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
     tools:context=".DetalleAnuncio.DetalleAnuncio">
 
     <RelativeLayout
         android:id="@+id/ToolbarRL"
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_toolbar_height"
-        android:background="#558CF6">
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/Ib_regresar"
-            android:src="@drawable/ic_back"
-            android:background="@android:color/transparent"
-            android:layout_centerVertical="true"
-            android:padding="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/ic_back" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textSize="16dp"
-            android:text="Detalle del Producto"
-            android:textStyle="bold"/>
+            android:text="Detalle del Medicamento"
+            android:textSize="20dp"
+            android:fontFamily="@font/bold" />
 
     </RelativeLayout>
 
@@ -40,32 +41,342 @@
         android:layout_below="@+id/ToolbarRL">
 
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="20dp"
+            >
 
             <TextView
                 android:id="@+id/Tv_Titulo"
                 android:text="@string/Tv_Titulo"
                 android:layout_centerHorizontal="true"
                 android:textAllCaps="true"
-                android:textSize="50px"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_below="@+id/Tv_Titulo">
+
+                <TextView
+                    android:id="@+id/Tv_nombre"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Tv_nombre"
+                    android:padding="5dp"
+                    android:textSize="50px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/Tv_Titulo"/>
+
+                <ImageView
+                    android:id="@+id/imagen_perfil"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/imagen_perfil"/>
+
+
+            </LinearLayout>
+
+
+            <!-- Categoria -->
             <androidx.viewpager2.widget.ViewPager2
-                android:layout_below="@+id/Tv_Titulo"
+
                 android:id="@+id/imagenSliderVP"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-            
+                android:layout_height="200dp"
+                android:layout_below="@+id/Tv_Titulo"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="20dp" />
+
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/perfilVendedor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Opciones"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#BED2F9"
+                app:strokeWidth="2dp"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/CardCategoria">
+
+                <TextView
+                    android:id="@+id/ViewCategoria"
+                    android:background="#BED2F9"
+                    android:layout_width="81dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/Categoria"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/Tv_categoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Tv_categoria"
+                android:layout_below="@+id/CardCategoria"
+                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                />
+
+
+            <!--Marca-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Tv_categoria"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#BED2F9"
+                app:strokeWidth="2dp"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/CardMarca">
+
+                <TextView
+                    android:id="@+id/ViewMarca"
+                    android:layout_width="170dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#BED2F9"
+                    android:gravity="center"
+                    android:text="Marca o Farmacia"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/Et_Marca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Et_Marca"
+                android:layout_below="@+id/CardMarca"
+                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                />
+
+
+            <!--Descripcion-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/CardDescripcion"
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Et_Marca"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bold"
+                android:padding="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#BED2F9"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:id="@+id/ViewDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#BED2F9"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="@string/Tv_Descripcion"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/Et_Descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Et_Descripcion"
+                android:layout_below="@+id/CardDescripcion"
+                android:layout_marginTop="5dp"
+                android:maxLines="6"
+                android:layout_centerInParent="true"
+                />
+
+
+            <!--Cantidad-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Et_Descripcion"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#BED2F9"
+                app:strokeWidth="2dp"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bold"
+                android:id="@+id/CardCantidad">
+
+                <TextView
+                    android:id="@+id/ViewCantidad"
+                    android:layout_width="182dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#BED2F9"
+                    android:gravity="center"
+                    android:text="Cantidad Disponible"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/Et_Cantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad Disponible"
+                android:layout_below="@+id/CardCantidad"
+                android:layout_marginTop="5dp"
+                android:maxLines="6"
+                android:layout_centerInParent="true"
+                />
+
+            <!--Fecha Caducidad-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Et_Cantidad"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#BED2F9"
+                app:strokeWidth="2dp"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bold"
+                android:id="@+id/CardLocalidad">
+
+                <TextView
+                    android:id="@+id/ViewLocalidad"
+                    android:layout_width="260dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#BED2F9"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="Municipio/Colinia de entrega"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/Et_Localidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Localidad"
+                android:layout_below="@+id/CardLocalidad"
+                android:layout_marginTop="5dp"
+                android:maxLines="6"
+                android:layout_centerInParent="true"
+                />
+
+            <!--Tolbar Opciones-->
+
+            <RelativeLayout
+                android:id="@+id/Opciones"
+                android:layout_below="@+id/imagenSliderVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Disponible"
+                    android:text="Disponible"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textStyle="italic"
+                    android:padding="2dp"/>
+
+                <ImageButton
+                    android:id="@+id/IbEditar"
+                    android:src="@drawable/ic_edit"
+                    android:background="@android:color/transparent"
+                    android:layout_toStartOf="@+id/IbFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageButton
+                    android:id="@+id/IbFavorite"
+                    android:src="@drawable/ic_favorite"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageButton
+                    android:id="@+id/IbBasura"
+                    android:src="@drawable/ic_basura"
+                    android:background="@android:color/transparent"
+                    android:layout_toStartOf="@+id/IbEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+            </RelativeLayout>
+
 
         </RelativeLayout>
 
+
     </ScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/OpcionesLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/IbComunicarse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comunicarse"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:cornerRadius="8dp"
+            app:backgroundTint="#1845FA"
+            app:strokeColor="#1845FA"
+            app:strokeWidth="2dp"
+            app:icon="@drawable/ic_basura"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+
 
 </RelativeLayout>

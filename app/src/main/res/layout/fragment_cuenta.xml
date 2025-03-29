@@ -4,33 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="15dp"
     tools:context=".Fragmentos.FragmentCuenta">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Contenedor para centrar el texto de bienvenida y colocar el botón en la esquina -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_height="@dimen/m_toolbar_height"
+            android:background="#558CF6">
 
-            <!-- Botón Cerrar Sesión alineado a la izquierda -->
-            <com.google.android.material.button.MaterialButton
+            <ImageButton
                 android:id="@+id/Btn_cerrar_Sesion"
-                android:layout_width="58dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:textAllCaps="true"
-                android:textColorLink="#D1CCCC"
-                app:icon="@drawable/ic_logout" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_logout"/>
 
-            <!-- Texto de bienvenida centrado -->
             <TextView
                 android:id="@+id/Txt_Bienvenido"
                 android:layout_width="wrap_content"
@@ -38,19 +32,21 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/Txt_Bienvenido"
-                android:textSize="20sp"
+                android:fontFamily="@font/bold"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
+
         <TextView
+            android:id="@+id/Tv_nombreCopia"
             android:text="@string/Tv_nombre"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- Imagen de perfil -->
         <ImageView
             android:id="@+id/Tv_perfil"
             android:layout_width="150dp"
@@ -58,9 +54,6 @@
             android:src="@drawable/imagen_perfil"
             android:layout_marginTop="15dp"
             android:scaleType="centerCrop"/>
-
-
-        <!-- Sección de información -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Btn_editar_perfil"
@@ -78,123 +71,14 @@
             android:orientation="vertical"
             android:layout_marginTop="20dp">
 
-
-            <!-- Email -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_googleeee"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:id="@+id/Tv_email"
-                    android:text="@string/Tv_email"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Nombre -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_nombre"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:id="@+id/Tv_nombre"
-                    android:text="@string/Tv_nombre"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Primer Apellido -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_nombre"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:id="@+id/Tv_primerapellido"
-                    android:text="@string/Tv_primerapellido"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Segundo Apellido -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_nombre"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:id="@+id/Tv_segundoapellido"
-                    android:text="@string/Tv_segundoapellido"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Código Postal -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_location"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:id="@+id/Tv_cp"
-                    android:text="@string/Tv_cp"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Teléfono -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
@@ -210,71 +94,121 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <!-- Edad -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_edad"
+                    android:src="@drawable/ic_googleeee"
                     android:layout_marginEnd="10dp"/>
 
                 <TextView
-                    android:id="@+id/Tv_fecha_nac"
-                    android:text="@string/Tv_fecha_nac"
+                    android:id="@+id/Tv_email"
+                    android:text="@string/Tv_email"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <!-- Localidad -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_ubi"
+                    android:src="@drawable/ic_nombre"
                     android:layout_marginEnd="10dp"/>
 
                 <TextView
-                    android:id="@+id/Tv_localidad"
-                    android:text="@string/Tv_localidad"
+                    android:id="@+id/Tv_nombre"
+                    android:text="@string/Tv_nombre"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <!-- Fecha de Registro -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_registro"
+                    android:src="@drawable/ic_nombre"
                     android:layout_marginEnd="10dp"/>
 
                 <TextView
-                    android:id="@+id/Tv_fecha_registro"
-                    android:text="@string/Tv_fecha_registro"
+                    android:id="@+id/Tv_primerapellido"
+                    android:text="@string/Tv_primerapellido"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nombre"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/Tv_segundoapellido"
+                    android:text="@string/Tv_segundoapellido"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_location"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/Tv_cp"
+                    android:text="@string/Tv_cp"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

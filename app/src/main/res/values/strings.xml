@@ -103,6 +103,11 @@
 
     <string name="favorite_button">Agregar a favoritos</string>
 
+    <string name="imagenContador">1/4</string>
+
+    <string name="Txt_Olvidaste">Olvisaste tu Contraseña?</string>
+    <string name="Txt_Recuperar">No te preocupes,esto puede pasar.Introduce la direccion asociada a tu cuenta</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

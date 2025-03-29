@@ -6,41 +6,46 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Anuncios.CrearAnuncio">
+    tools:context=".Anuncios.CrearAnuncio"
+    android:fitsSystemWindows="true">
 
-    <RelativeLayout
-        android:id="@+id/RL_Imagen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/agregarImg"
-            android:layout_marginTop="15dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_agregaar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
-    </RelativeLayout>
-
+    <!-- ScrollView que envuelve todo el contenido -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/RL_Imagen"
-        android:layout_marginTop="-2dp"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:fillViewport="true">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Imagen -->
+            <RelativeLayout
+                android:id="@+id/RL_Imagen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/agregarImg"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_imagee"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+            </RelativeLayout>
+
+            <!-- RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RV_Imagenes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/RL_Imagen"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="4"
                 tools:listitem="@layout/item_imagenes_seleccionadas" />
 
+            <!-- Formulario con TextInputLayouts -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_NombreProduct"
                 android:layout_width="match_parent"
@@ -56,10 +61,11 @@
                     android:id="@+id/Et_nombre_medicamento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName|textCapSentences"
+                    android:inputType="textMultiLine|textCapSentences"
                     android:hint="@string/Et_nombre_medicamento" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Otros TextInputLayouts como el anterior -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_Categoria"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
@@ -136,7 +142,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName|textCapSentences"
-                    android:hint="@string/Et_fecha_A_Caducar" />
+                    android:hint="@string/Et_fecha_A_Caducar"
+                    android:focusable="false"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -178,10 +185,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
-
-
     </androidx.core.widget.NestedScrollView>
 
+    <!-- Botón al final -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Btn_Crear_Anuncio"
         android:text="@string/Btn_Crear_Anuncio"
@@ -191,8 +197,5 @@
         app:cornerRadius="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-
-
 
 </RelativeLayout>

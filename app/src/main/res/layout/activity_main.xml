@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <!-- Toolbar (OCULTO) -->
     <RelativeLayout
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_toolbar_height"
         android:background="#FFFFFF"
-        android:visibility="gone"> <!-- Aquí se oculta -->
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/TituloRL"
@@ -34,36 +35,27 @@
     <!-- Contenedor para los fragmentos -->
     <FrameLayout
         android:id="@+id/FragmentL1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:layout_below="@id/ToolbarRL"
-        android:layout_above="@id/View1"
-        android:layout_alignParentTop="true"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/View1"/>
 
-    <!-- Línea separadora -->
     <View
         android:id="@+id/View1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#ccc"
-        android:layout_above="@id/BottomNV"/>
+        android:layout_above="@+id/BottomNV"/>
 
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/mi_menu"
-        app:labelVisibilityMode="labeled"/>
+        android:layout_marginBottom="1dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/mi_menu">
 
-    <!-- Botón flotante -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/FAB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_agregar"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="58dp"/>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </RelativeLayout>

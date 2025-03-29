@@ -47,9 +47,17 @@ class FragmentInicio : Fragment() {
 
         // Configurar RecyclerView para anuncios
         binding.AnuncioView.setHasFixedSize(true)
+
+
         binding.AnuncioView.layoutManager = GridLayoutManager(mContext, 2)
+
+
+
+
+
         adaptadorAnuncio = AdaptadorAnuncio(mContext, anuncioArrayList)
         binding.AnuncioView.adapter = adaptadorAnuncio
+
 
         // Cargar categorías y anuncios
         cargarCategorias()
@@ -66,10 +74,11 @@ class FragmentInicio : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        binding.IbClear.setOnClickListener {
-            binding.EtBuscar.setText("")
-            Toast.makeText(mContext, "Texto borrado", Toast.LENGTH_SHORT).show()
-        }
+//     binding.IbClear.setOnClickListener {
+//            binding.EtBuscar.setText("")
+//            Toast.makeText(mContext, "Texto borrado", Toast.LENGTH_SHORT).show()
+//        }
+
     }
 
     private fun cargarCategorias() {
@@ -88,8 +97,7 @@ class FragmentInicio : Fragment() {
                 }
             }
         )
-
-        binding.CategoriaView.adapter = adaptadorCategoria
+//        binding.CategoriaView.adapter = adaptadorCategoria
     }
 
     private fun cargarAnuncios(categoria: String) {

@@ -2,34 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Item_Incio"
-        android:title="@string/Item_Inicio"
-        android:icon="@drawable/ic_inicio"
-        />
+        android:id="@+id/Item_Cuenta"
+        android:icon="@drawable/ic_profile" />
 
     <item
         android:id="@+id/Item_Chats"
-        android:title="@string/Item_Chats"
-        android:icon="@drawable/ic_chats"
-        />
+        android:icon="@drawable/ic_chatnew" />
 
     <item
-        android:id="@+id/Item_Publicar"
-        android:title="@string/Item_Publicar"
-        android:enabled="false"
-        />
+        android:id="@+id/Item_Incio"
+        android:icon="@drawable/ic_homenew" />
 
     <item
         android:id="@+id/Item_Mis_Productos"
-        android:title="@string/Item_Mis_Productos"
-        android:icon="@drawable/ic_mis_productos"
-        />
+        android:icon="@drawable/ic_mis_productos" />
 
     <item
-        android:id="@+id/Item_Cuenta"
-        android:title="@string/Item_Cuenta"
-        android:icon="@drawable/ic_cuenta"
-        />
-
+        android:id="@+id/Item_Publicar"
+        android:icon="@drawable/ic_addd" />
 
 </menu>

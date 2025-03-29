@@ -53,15 +53,16 @@ class MainActivity : AppCompatActivity() {
                     verFragmentCuenta()
                     true
                 }
+                R.id.Item_Publicar->{
+                    verFragmentPublicar()
+                    true
+                }
                 else -> {
                     false
                 }
             }
         }
 
-        binding.FAB.setOnClickListener {
-            startActivity(Intent(this, CrearAnuncio::class.java))
-        }
     }
 
     private fun comprobarSesion() {
@@ -97,5 +98,11 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(binding.FragmentL1.id, fragment, "FragmentCuenta")
             .commit()
+    }
+
+    private fun verFragmentPublicar() {
+        val intent = Intent(this, CrearAnuncio::class.java)
+        intent.putExtra("Edicion", false)
+        startActivity(intent)
     }
 }

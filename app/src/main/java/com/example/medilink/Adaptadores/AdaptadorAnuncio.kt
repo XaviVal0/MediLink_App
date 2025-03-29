@@ -2,6 +2,7 @@ package com.example.medilink.Adaptadores
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -42,7 +43,10 @@ class AdaptadorAnuncio(
         holder.binding.apply {
             TvTitulo.text = modeloAnuncio.nombreproducto
             TvEstado.text = modeloAnuncio.estado
+
         }
+
+
 
         cargarImagen(modeloAnuncio, holder)
 
@@ -54,6 +58,12 @@ class AdaptadorAnuncio(
             context.startActivity(intent)
         }
 
+        if (modeloAnuncio.estado.equals("Disponible")) {
+            holder.binding.TvEstado.setTextColor(Color.parseColor("#007A33"))
+        } else {
+            holder.binding.TvEstado.setTextColor(Color.RED)
+        }
+
         holder.binding.IbButton.setOnClickListener {
             val favorito = modeloAnuncio.favorito
             if (favorito) {
@@ -62,6 +72,7 @@ class AdaptadorAnuncio(
                 Constantes.agregarAnuncioFav(context, modeloAnuncio.id)
             }
         }
+
     }
 
     private fun comprobarFavorito(modeloAnuncio: ModeloAnuncio, holder: AdaptadorAnuncio.HolderAnuncio) {

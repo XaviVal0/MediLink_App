@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.medilink.Constantes
 import com.example.medilink.MainActivity
 import com.example.medilink.R
+import com.example.medilink.RecuperarPassword
 import com.example.medilink.databinding.ActivityCorreologinBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -68,6 +69,10 @@ class correologin : AppCompatActivity() {
 
         binding.TxtRegistrarme.setOnClickListener {
             startActivity(Intent(this@correologin, registrocorreo::class.java))
+        }
+
+        binding.TvRecuperar.setOnClickListener {
+            startActivity(Intent(this@correologin, RecuperarPassword::class.java))
         }
 
 

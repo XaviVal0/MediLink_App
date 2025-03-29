@@ -64,7 +64,7 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.google.android.libraries.places:places:3.5.0")
-
+    implementation("com.google.firebase:firebase-messaging-ktx:24.1.1")
     implementation("androidx.compose.ui:ui:1.6.0")
     implementation("androidx.compose.material:material:1.6.0")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
