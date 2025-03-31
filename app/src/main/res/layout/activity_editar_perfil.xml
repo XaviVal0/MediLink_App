@@ -37,20 +37,19 @@
 
             <ImageView
                 android:id="@+id/img_perfil"
-                android:src="@drawable/imagen_perfil"
-                android:scaleType="centerCrop"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_centerHorizontal="true"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/imagen_perfil" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageButton
                 android:id="@+id/FABCambiarImg"
-                android:src="@drawable/ic_img"
-                app:fabSize="mini"
-                android:layout_alignParentEnd="true"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_img"
+                app:fabSize="mini" />
         </RelativeLayout>
 
         <!-- Campos de entrada -->
@@ -91,7 +90,8 @@
                 android:hint="@string/Et_fecha_nac"
                 android:inputType="date"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -110,6 +110,7 @@
                 android:id="@+id/Et_Telefono"
                 android:hint="@string/Et_Telefono"
                 android:inputType="phone"
+                android:maxLength="10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -129,6 +130,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Et_Cp"
                 android:hint="@string/Et_Cp"
+                android:maxLength="5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>

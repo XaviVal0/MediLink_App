@@ -128,7 +128,8 @@
                 android:hint="@string/Et_telefono"
                 android:inputType="phone"
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:maxLength="10"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Código Postal -->
@@ -152,6 +153,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/Et_cp"
                 android:inputType="number"
+                android:maxLength="5"
                 android:textColor="@color/black"
                 android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>

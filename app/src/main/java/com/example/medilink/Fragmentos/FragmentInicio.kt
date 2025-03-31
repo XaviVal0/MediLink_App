@@ -4,16 +4,15 @@ import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medilink.Adaptadores.AdaptadorAnuncio
 import com.example.medilink.Adaptadores.AdaptadorCategoria
 import com.example.medilink.Constantes
-import com.example.medilink.Filtro.FiltroAnuncio
 import com.example.medilink.Modelo.ModeloAnuncio
 import com.example.medilink.Modelo.ModeloCategoria
 import com.example.medilink.RvListenerCategoria
@@ -22,11 +21,15 @@ import com.google.firebase.database.*
 
 class FragmentInicio : Fragment() {
 
-    private lateinit var binding: FragmentInicioBinding
+    private var _binding: FragmentInicioBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mContext: Context
 
     private var anuncioArrayList: ArrayList<ModeloAnuncio> = ArrayList()
     private lateinit var adaptadorAnuncio: AdaptadorAnuncio
+    private lateinit var adaptadorCategoria: AdaptadorCategoria
+    private lateinit var anuncioListener: ValueEventListener
+    private val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -38,7 +41,7 @@ class FragmentInicio : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentInicioBinding.inflate(inflater, container, false)
+        _binding = FragmentInicioBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -47,17 +50,12 @@ class FragmentInicio : Fragment() {
 
         // Configurar RecyclerView para anuncios
         binding.AnuncioView.setHasFixedSize(true)
-
-
-        binding.AnuncioView.layoutManager = GridLayoutManager(mContext, 2)
-
-
-
-
-
-        adaptadorAnuncio = AdaptadorAnuncio(mContext, anuncioArrayList)
+        binding.AnuncioView.layoutManager = GridLayoutManager(requireContext(), 2)
+        adaptadorAnuncio = AdaptadorAnuncio(requireContext(), anuncioArrayList)
         binding.AnuncioView.adapter = adaptadorAnuncio
 
+        // Configurar RecyclerView para categorías
+        binding.rvCategorias.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         // Cargar categorías y anuncios
         cargarCategorias()
@@ -68,28 +66,26 @@ class FragmentInicio : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                adaptadorAnuncio.filter.filter(s.toString()) // Aplicar filtro con el texto ingresado
+                adaptadorAnuncio.filter.filter(s.toString())
             }
 
             override fun afterTextChanged(s: Editable?) {}
         })
 
-//     binding.IbClear.setOnClickListener {
-//            binding.EtBuscar.setText("")
-//            Toast.makeText(mContext, "Texto borrado", Toast.LENGTH_SHORT).show()
-//        }
-
+        // Botón para mostrar u ocultar categorías
+        binding.btnMostrarCategorias.setOnClickListener {
+            binding.rvCategorias.visibility = if (binding.rvCategorias.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+        }
     }
 
     private fun cargarCategorias() {
         val categoriaArrayList = ArrayList<ModeloCategoria>()
-        for (i in Constantes.categorias.indices) {
-            val modeloCategoria = ModeloCategoria(Constantes.categorias[i], Constantes.categoriaIconos[i])
-            categoriaArrayList.add(modeloCategoria)
+        for (categoria in Constantes.categorias) {
+            categoriaArrayList.add(ModeloCategoria(categoria))
         }
 
-        val adaptadorCategoria = AdaptadorCategoria(
-            mContext,
+        adaptadorCategoria = AdaptadorCategoria(
+            requireContext(),
             categoriaArrayList,
             object : RvListenerCategoria {
                 override fun onCategoriaClick(modeloCategoria: ModeloCategoria) {
@@ -97,31 +93,21 @@ class FragmentInicio : Fragment() {
                 }
             }
         )
-//        binding.CategoriaView.adapter = adaptadorCategoria
+        binding.rvCategorias.adapter = adaptadorCategoria
     }
 
     private fun cargarAnuncios(categoria: String) {
-        val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
-
-        ref.addValueEventListener(object : ValueEventListener {
+        anuncioListener = ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                anuncioArrayList.clear()
-
+                val tempAnuncioList = ArrayList<ModeloAnuncio>()
                 for (ds in snapshot.children) {
-                    try {
-                        val modeloAnuncio = ds.getValue(ModeloAnuncio::class.java)
-
-                        if (modeloAnuncio != null) {
-                            if (categoria.equals("Todos", ignoreCase = true) ||
-                                modeloAnuncio.categoria.equals(categoria, ignoreCase = true)) {
-                                anuncioArrayList.add(modeloAnuncio)
-                            }
-                        }
-                    } catch (e: Exception) {
-                        e.printStackTrace()
+                    val modeloAnuncio = ds.getValue(ModeloAnuncio::class.java)
+                    if (modeloAnuncio != null && (categoria == "Todos" || modeloAnuncio.categoria.equals(categoria, ignoreCase = true))) {
+                        tempAnuncioList.add(modeloAnuncio)
                     }
                 }
-
+                anuncioArrayList.clear()
+                anuncioArrayList.addAll(tempAnuncioList)
                 adaptadorAnuncio.notifyDataSetChanged()
             }
 
@@ -129,5 +115,11 @@ class FragmentInicio : Fragment() {
                 println("❌ Error al cargar anuncios: ${error.message}")
             }
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        ref.removeEventListener(anuncioListener)
+        _binding = null
     }
 }
